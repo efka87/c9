@@ -13,3 +13,5 @@ $ git commit -m "uus muudatus MI"
 $ git push
 
 trolololololooo
+
+Git töötab ka kodus, woop woop
