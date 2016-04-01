@@ -17,7 +17,7 @@ class Autod{
 
     Autod(){};
   public:
-    Autod(std::string aMark mark, std::string aMudel mudel, int aAasta aasta, std::string aKytus kytus, int aMootor mootor, std::string aKaigukast kaigukast, std::string aVeoskeem veoskeem, std::string aVIN vin;){
+    Autod(std::string aMark mark, std::string aMudel mudel, int aAasta aasta, std::string aKytus kytus, int aMootor mootor, std::string aKaigukast kaigukast, std::string aVeoskeem veoskeem, std::string aVIN vin){
         aMark = mark;
         aMudel = mudel;
         aAasta = aasta;
@@ -42,6 +42,6 @@ class Soiduauto : public Autod{
 };
 class Pakibuss : public Autod{
     
-}
+};
 
 #endif
