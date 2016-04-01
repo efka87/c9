@@ -17,7 +17,7 @@ class Autod{
 
     Autod(){};
   public:
-    Autod(std::string aMark mark, std::string aMudel mudel, int aAasta aasta, std::string aKytus kytus, int aMootor mootor, std::string aKaigukast kaigukast, std::string aVeoskeem veoskeem, std::string aVIN vin){
+    Autod(std::string mark, std::string mudel, int aasta, std::string kytus, int mootor, std::string kaigukast, std::string veoskeem, std::string vin){
         aMark = mark;
         aMudel = mudel;
         aAasta = aasta;
