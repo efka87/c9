@@ -13,13 +13,13 @@ class Autod{
     std::string aKaigukast;
     std::string aVeoskeem;
     std::string aVIN;
-                                     //  tegelen hiljem   Autoliik(maastur/pakibuss/sõiduauto)
+                                     
 
     Autod(){};
   public:
     Autod(std::string mark, std::string mudel, int aasta, std::string kytus, int mootor, std::string kaigukast, std::string veoskeem, std::string vin){
         aMark = mark;
-        aMudel = mudel;
+        aMudel = mudel;                     //konstruktor andmete sisestamiseks,  ei ole kindel vb peab seda veel muutma
         aAasta = aasta;
         aKytus = kytus;
         aMootor = mootor;
@@ -34,6 +34,8 @@ class Autod{
   
 };
 
+/*    Sõidukite alaliigid, igaks juhuks kommentaarisin välja, kuna ei tea kas neid võib päris tühjaks jätta
+
 class Maastur : public Autod{
     
 };
@@ -43,5 +45,7 @@ class Soiduauto : public Autod{
 class Pakibuss : public Autod{
     
 };
+
+*/
 
 #endif
