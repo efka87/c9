@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 
+// klient klassi loomine (Lauri)
+
 class Klient{
   private:
     std::string kEesnimi;
