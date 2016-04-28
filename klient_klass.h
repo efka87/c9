@@ -9,21 +9,43 @@ class Klient{
   private:
     std::string kEesnimi;
     std::string kPerenimi;
-    std::string kKliendi_id;
-    int kTelefon;
+    int kKliendi_id;
+    std::string kTelefon;
     std::string kEmail;
 
     Klient(){};
     
   public:
-    Klient(std::string Eesnimi, std::string Perenimi, std::string Kliendi_id, int Telefon, std::string Email){
+    Klient(std::string Eesnimi, std::string Perenimi, int Kliendi_id, std::string kTelefon, std::string Email){
         kEesnimi = Eesnimi;
         kPerenimi = Perenimi;
         kKliendi_id = Kliendi_id;
         kTelefon = Telefon;
         kEmail = Email;
         
-    }      
+        
+    }  
+    void getInfo(){
+        std::cout <<"Kliendid: "<<kEesnimi << " : " << kPerenimi<< " : " << kKliendi_id<< " : " << kTelefon<< " : " << kEmail<<std::endl;
+    }
+     std::string getEesnimi(){
+      return kEesnimi;
+    }
+     std::string getkPerenimi(){
+      return kPerenimi;
+    }
+     int getKliendi_id(){
+      return kKliendi_id;
+    }
+     std::string getTelefon(){
+      return kTelefon;
+    }
+     std::string getmark(){
+      return aMark;
+    }
+     std::string getEmail(){
+      return kEmail;
+    }
   
 };
 
