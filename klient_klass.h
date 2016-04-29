@@ -16,7 +16,7 @@ class Klient{
     Klient(){};
     
   public:
-    Klient(std::string Eesnimi, std::string Perenimi, int Kliendi_id, std::string kTelefon, std::string Email){
+    Klient(std::string Eesnimi, std::string Perenimi, int Kliendi_id, std::string Telefon, std::string Email){
         kEesnimi = Eesnimi;
         kPerenimi = Perenimi;
         kKliendi_id = Kliendi_id;
@@ -31,7 +31,7 @@ class Klient{
      std::string getEesnimi(){
       return kEesnimi;
     }
-     std::string getkPerenimi(){
+     std::string getPerenimi(){
       return kPerenimi;
     }
      int getKliendi_id(){
@@ -40,12 +40,10 @@ class Klient{
      std::string getTelefon(){
       return kTelefon;
     }
-     std::string getmark(){
-      return aMark;
-    }
      std::string getEmail(){
       return kEmail;
     }
+  
   
 };
 
