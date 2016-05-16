@@ -10,12 +10,15 @@ using namespace std;
 
 
 vector<Klient*> klientLisamine(string Eesnimi, string Perenimi, int Kliendi_id, string Telefon, string Email, vector<Klient*> klientNimekiri){
+    string vaheInt;
+    
     cout << endl << "Enter kliendi Eesnimi: ";
     getline(cin,Eesnimi);  //getline lisamisel lahenes tühiku kasutamise probleem aga tekkis failist lugemise error(failis pole andmetüüpe, loeb tühikust tühikuni)
     cout << endl << "Enter kliendi Perenimi: ";
     getline(cin,Perenimi);
     cout << endl << "Enter kliendi Kliendi_id: ";
-    cin >> Kliendi_id;
+    getline(cin, vaheInt);
+    Kliendi_id=atoi(vaheInt.c_str());
     cout << endl << "Enter kliendi Telefon: ";
     getline(cin,Telefon);
     cout << endl << "Enter kliendi Email: ";
