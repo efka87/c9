@@ -17,9 +17,9 @@ vector<Klient*> klientLisamine(string Eesnimi, string Perenimi, int Kliendi_id, 
     cout << endl << "Enter kliendi Kliendi_id: ";
     cin >> Kliendi_id;
     cout << endl << "Enter kliendi Telefon: ";
-    cin >> Telefon;
+    getline(cin,Telefon);
     cout << endl << "Enter kliendi Email: ";
-    cin >> Email;
+    getline(cin,Email);
     
     Klient *newKlient = new Klient(Eesnimi, Perenimi, Kliendi_id, Telefon, Email);
     klientNimekiri.push_back(newKlient);
@@ -207,7 +207,7 @@ vector<Autod*> autoLisamine(string mark, string mudel,int aasta, string kytus, f
     valik=0;
     
     cout << endl << "Enter auto vin: ";
-    cin >> vin;    
+    getline(cin,vin);    
     
     //võtan autoID-le väärtuse
     autoID=getID(autoNimekiri);
@@ -281,6 +281,7 @@ int main(){
     string Eesnimi, Perenimi, Telefon, Email;
     int Kliendi_id;
     
+    
     // loeb autod failist nimekirja
     autoNimekiri=nimekirjaFailistLugemine(mark,mudel,aasta, kytus, mootor, kaigukast, veoskeem,  vin, autoID, autoNimekiri);
     // auto käsitsi nimekirja lisamine
@@ -310,10 +311,6 @@ int main(){
 
     }
     */
-    
-
-    
-    
     
     // matrixi failist lugemine
     ifstream iFile;
