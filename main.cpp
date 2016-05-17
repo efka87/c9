@@ -9,16 +9,17 @@
 using namespace std;
 
 
-vector<Klient*> klientLisamine(string Eesnimi, string Perenimi, int Kliendi_id, string Telefon, string Email, vector<Klient*> klientNimekiri){
+vector<Klient*> klientLisamine(string Eesnimi, string Perenimi, int Kliendi_id, string Telefon, string Email,int W, vector<Klient*> klientNimekiri){
     string vaheInt;
     
     cout << endl << "Enter kliendi Eesnimi: ";
     getline(cin,Eesnimi);  //getline lisamisel lahenes tühiku kasutamise probleem aga tekkis failist lugemise error(failis pole andmetüüpe, loeb tühikust tühikuni)
     cout << endl << "Enter kliendi Perenimi: ";
     getline(cin,Perenimi);
-    cout << endl << "Enter kliendi Kliendi_id: ";
-    getline(cin, vaheInt);
-    Kliendi_id=atoi(vaheInt.c_str());
+  //  cout << endl << "Enter kliendi Kliendi_id: ";
+  //  getline(cin, vaheInt);
+  //  Kliendi_id=atoi(vaheInt.c_str());
+    Kliendi_id = W;
     cout << endl << "Enter kliendi Telefon: ";
     getline(cin,Telefon);
     cout << endl << "Enter kliendi Email: ";
@@ -75,7 +76,7 @@ int getID( vector<Autod*> autoNimekiri){
     int u,v,ID;
     // kui autoNimekisi on tühi siis esimene auto saab id-ks 0
     if(autoNimekiri.size()==0){
-        ID=0;
+        ID=1;
     }
     //kõigi ülejäänud autode id tuleb viimase auto id pluss 1
     else{
@@ -150,11 +151,11 @@ vector<Autod*> autoLisamine(string mark, string mudel,int aasta, string kytus, f
         //teeb stringi float-iks
         mootor=atof(mootorString.c_str());
         //kui suurus ei ole õiges vahemikus edastab veateate
-        if(0.5<mootor && mootor<=8){
+        if(0.5<mootor && mootor<=9){
             
         }
         else{
-            cout << "\nMootor peab jääma vahemiku 0.6-8\n";
+            cout << "\nMootor peab jääma vahemiku 0.6-9\n";
             
         }
     }
@@ -225,8 +226,6 @@ vector<Autod*> autoLisamine(string mark, string mudel,int aasta, string kytus, f
 
 // autode failist lugemine
 
-// loeb viimast elementi topelt !!!!
-
 vector<Autod*> nimekirjaFailistLugemine(string mark, string mudel,int aasta, string kytus, float mootor, string kaigukast, string veoskeem, string vin,int autoID, vector<Autod*> autoNimekiri){
     
     ifstream iFile;
@@ -279,7 +278,7 @@ int main(){
     float mootor;
     int a[5][8];
     int rida,veerg;
-     // muutujate deklareerimine
+    int q,w;
     vector<Klient*> klientNimekiri;
     string Eesnimi, Perenimi, Telefon, Email;
     int Kliendi_id;
@@ -292,14 +291,18 @@ int main(){
     // salvestab autonimekirja faili
     nimekirjaFailiSalvestamine(autoNimekiri);
     
+    
+    q=autoNimekiri.size()-1;
+    w=autoNimekiri[q]->getautoID() ; //võtab nimekirja viimase sissekande ID
+    
      // loeb klient failist nimekirja
     klientNimekiri=nimekirjaFailistLugemine(Eesnimi, Perenimi, Kliendi_id, Telefon, Email, klientNimekiri);
     // kliendi käsitsi nimekirja lisamine
-    klientNimekiri=klientLisamine(Eesnimi, Perenimi, Kliendi_id, Telefon, Email, klientNimekiri);
+    klientNimekiri=klientLisamine(Eesnimi, Perenimi, Kliendi_id, Telefon, Email,w, klientNimekiri);
     // salvestab klient nimekirja faili
     andmeteFailiSalvestamine(klientNimekiri);
 
-    // väljastab autoNimekiri sisu
+    // väljastab autoNimekiri sisu - seda kui kasutada tuleb teha eraldi menüü valik
     for(int i = 0;i<autoNimekiri.size();i++){
         cout << i+1 <<": ";
         autoNimekiri[i]->getInfo();
@@ -411,9 +414,7 @@ int main(){
             break;
         }
     }
-    int q,w;
-    q=autoNimekiri.size()-1;
-    w=autoNimekiri[q]->getautoID() ; //võtab nimekirja viimase sissekande ID
+    
     //kontrollib kas aeg on vaba, kui aeg on vaba kirjutab ID tabelisse
     if(a[rida][veerg] == 0){
         cout << "aeg on vaba" << endl;
