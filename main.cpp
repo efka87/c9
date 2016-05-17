@@ -145,7 +145,7 @@ vector<Autod*> autoLisamine(string mark, string mudel,int aasta, string kytus, f
     
     cout << endl << "Enter auto mootor liitrites (2.5): \n";
     //teeb kuni mootori maht on õiges vahemikus
-    while(mootor<0.5 || mootor>8){
+    while(mootor<0.5 || mootor>9){
         //loeb sisestuse stringi
         getline(cin, mootorString);
         //teeb stringi float-iks
